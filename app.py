@@ -23,6 +23,7 @@ from TiktokCvox import *
 
 app=Flask(__name__)
 app.secret_key = "Dhjkasu2381hdfjkKUDr4dsajklDHUJUI489190"
+application = app
 
 #Tiktok library
 Api = Tiktok()
