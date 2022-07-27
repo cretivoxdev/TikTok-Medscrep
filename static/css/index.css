@@ -408,3 +408,10 @@ table img{
     height: 150px;
     object-fit: cover;
 }
+
+#earnings{
+    font-size: 20pt;
+    font-weight: 700;
+    color: white;
+   margin: 10px 0 10px;
+}

@@ -178,6 +178,7 @@ $(document).ready(function () {
   $(".download-btn").on("click", function (e) {
     e.preventDefault();
     html2canvas(document.querySelector(".download-container"), {
+      useCORS: true,
       scrollX: 0,
       scrollY: 0,
     }).then(function (canvas) {
@@ -189,7 +190,34 @@ $(document).ready(function () {
   });
 });
 
+function instagram(){
+  alert("Sorry, instagram analytics is under construction")
+}
 
+// Average Earnings Per Post
+$(document).ready(function(){
+  async function loadJSON(url){
+    const res = await fetch(url)
+    return await res.json();
+  }
+  loadJSON("../static/assets/earning.json").then((data) => {
+    console.log(data);
+    var followers = data[0].followers;
+    let income;
+    if(followers <= 10000){
+      income = "$5-10"
+    } else if(followers > 10000 && followers <= 100000 ){
+      income = "$60-90"
+    } else if(followers > 100000 && followers <= 500000){
+      income = "$200-400"
+    } else if(followers > 500000 && followers <= 1000000){
+      income = "$400-600"
+    } else {
+      income = "$750-<1000"
+    }
+    document.getElementById("earnings").innerHTML = income
+  })
+})
 
 // Count
 $(document).ready(function () {

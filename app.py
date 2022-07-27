@@ -288,7 +288,7 @@ def tiktok():
     grade["ER"] = "%.2f" % Profile_ER
     datajson2.append(grade)
     jsonString_grade = json.dumps(datajson2)
-    jsonFile_grade = open("./static/assets/grade.json", "w")
+    jsonFile_grade = open("./static/assets/earning.json", "w")
     jsonFile_grade.write(jsonString_grade)
     jsonFile_grade.close()
     
