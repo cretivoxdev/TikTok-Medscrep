@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <!-- <div class="container-fluid loading" id="loading">
+    <div class="container-fluid loading" id="loading">
         <div class="row d-flex vh-100 align-items-center text-center justify-content-center">
             <div class="card card-loading">
                 <div class="card-body">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -42,16 +42,16 @@
                 <li class="sidebar-brand mb-5">
                     <img src="/static/assets/cretivox-black.png" alt="" />
                 </li>
-                <li class="active">
-                    <a href="#">
+                <li class="">
+                    <a href="instgram.html">
                         <i class="fab fa-instagram"></i>
                         Instagram
                     </a>
                 </li>
-                <li class="">
+                <li class="active">
                     <a href="#" disabled>
                         <i class="fab fa-youtube"></i>
-                        Youtube
+                        TikTok
                     </a>
                 </li>
                 <li class="">
@@ -92,7 +92,7 @@
                                             {% block body %}{% endblock %}
                                         </div> -->
                                         <div class="col-lg-5 text-center">
-                                            <img src="https://cdn.pixabay.com/photo/2016/12/04/18/58/instagram-1882330_640.png"
+                                            <img src="http://tricolortimes.com/wp-content/uploads/2020/02/Reviews_Larsen-Whitnie_TikTok.svg"
                                                 alt="">
                                             <h4><strong>TikTok Analytics</strong></h4>
                                             <p>Beta Version 1.6</p>
@@ -144,7 +144,7 @@
                                         <div class="col-lg-8">
                                             <div class="first py-md-3">
                                                 <h4><strong>{{name}}</strong></h4>
-                                                <!-- <p><a href="https://{{link}}">{{link}}</a></p> -->
+                                                <p><a href="https://{{link}}">{{link}}</a></p>
                                             </div>
                                             <p class="biography" id="biography"><strong>Bio:</strong>
                                                 {{bio}}
@@ -185,8 +185,7 @@
                         <div class="col-xl-3 col-lg-6 col-12 col-md-6">
                             <div class="card card-grid">
                                 <div class="card-body">
-                                    <p class="list-text"><i class="fas fa-percentage icon-list"></i>Egm
-                                        Rate:
+                                    <p class="list-text"><i class="fas fa-percentage icon-list"></i>ER Profile:
                                     </p>
                                     <p class="data-static">
                                         {{ER_pro}}
@@ -207,7 +206,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card h-100 card-chart">
                                 <div class="card-body">
@@ -219,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="row py-4">
                     <div class="col-lg-12">
@@ -236,13 +235,13 @@
                                                 <th scope="col">Like</th>
                                                 <th scope="col">Comments</th>
                                                 <th scope="col">Views</th>
-                                                <th scope="col">ER Post</th>
+                                                <th scope="col">ER</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="table-row">
                                                 <td scope="row">1</td>
-                                                <td><img src="{{post_1}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_1}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_1}}</td>
                                                 <td><a href="{{link_1}}" target="_blank">Link</a></td>
                                                 <td>{{like_1}}</td>
@@ -252,7 +251,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">2</td>
-                                                <td><img src="{{post_2}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_2}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_2}}</td>
                                                 <td><a href="{{link_2}}" target="_blank">Link</a></td>
                                                 <td>{{like_2}}</td>
@@ -262,7 +261,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">3</td>
-                                                <td><img src="{{post_3}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_3}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_3}}</td>
                                                 <td><a href="{{link_3}}" target="_blank">Link</a></td>
                                                 <td>{{like_3}}</td>
@@ -272,7 +271,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">4</td>
-                                                <td><img src="{{post_4}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_4}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_4}}</td>
                                                 <td><a href="{{link_4}}" target="_blank">Link</a></td>
                                                 <td>{{like_4}}</td>
@@ -282,7 +281,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">5</td>
-                                                <td><img src="{{post_5}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_5}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_5}}</td>
                                                 <td><a href="{{link_5}}" target="_blank">Link</a></td>
                                                 <td>{{like_5}}</td>
@@ -292,7 +291,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">6</td>
-                                                <td><img src="{{post_6}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_6}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_6}}</td>
                                                 <td><a href="{{link_6}}" target="_blank">Link</a></td>
                                                 <td>{{like_6}}</td>
@@ -302,7 +301,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">7</td>
-                                                <td><img src="{{post_7}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_7}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_7}}</td>
                                                 <td><a href="{{link_7}}" target="_blank">Link</a></td>
                                                 <td>{{like_7}}</td>
@@ -312,7 +311,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">8</td>
-                                                <td><img src="{{post_8}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_8}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_8}}</td>
                                                 <td><a href="{{link_8}}" target="_blank">Link</a></td>
                                                 <td>{{like_8}}</td>
@@ -322,7 +321,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">9</td>
-                                                <td><img src="{{post_9}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_9}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_9}}</td>
                                                 <td><a href="{{link_9}}" target="_blank">Link</a></td>
                                                 <td>{{like_9}}</td>
@@ -332,7 +331,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">10</td>
-                                                <td><img src="{{post_10}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_10}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_10}}</td>
                                                 <td><a href="{{link_10}}" target="_blank">Link</a></td>
                                                 <td>{{like_10}}</td>
@@ -342,7 +341,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">11</td>
-                                                <td><img src="{{post_11}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_11}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_11}}</td>
                                                 <td><a href="{{link_11}}" target="_blank">Link</a></td>
                                                 <td>{{like_11}}</td>
@@ -352,7 +351,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">12</td>
-                                                <td><img src="{{post_12}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_12}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_12}}</td>
                                                 <td><a href="{{link_12}}" target="_blank">Link</a></td>
                                                 <td>{{like_12}}</td>
@@ -362,7 +361,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">13</td>
-                                                <td><img src="{{post_13}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_13}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_13}}</td>
                                                 <td><a href="{{link_13}}" target="_blank">Link</a></td>
                                                 <td>{{like_13}}</td>
@@ -372,7 +371,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">14</td>
-                                                <td><img src="{{post_14}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_14}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_14}}</td>
                                                 <td><a href="{{link_14}}" target="_blank">Link</a></td>
                                                 <td>{{like_14}}</td>
@@ -382,7 +381,7 @@
                                             </tr>
                                             <tr class="table-row">
                                                 <td scope="row">15</td>
-                                                <td><img src="{{post_15}}" width="150px" height="auto" alt=""></td>
+                                                <td><img src="{{post_15}}" height="auto" alt=""></td>
                                                 <td class="box">{{caption_15}}</td>
                                                 <td><a href="{{link_15}}" target="_blank">Link</a></td>
                                                 <td>{{like_15}}</td>
@@ -416,11 +415,96 @@
                     <img src="" id="created-element" style="visibility: hidden;" />
                 </div>
                 {% else %}
-                Before
+                <!-- Before -->
+                <div class="download-container">
+                    <div class="row pb-4 pt-1">
+                        <div class="col col-lg-12 order-lg-2 order-1">
+                            <div class="card h-100">
+                                <div class="card-body profile-card">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-3">
+                                            <img class="profile-picture" src="https://via.placeholder.com/150x150" width="150" alt="">
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="first py-md-3">
+                                                <h4><strong>No Data</strong></h4>
+                                                <!-- <p><a href="https://{{link}}">{{link}}</a></p> -->
+                                            </div>
+                                            <p class="biography" id="biography"><strong>Bio:</strong>
+                                                No Data..
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-12 col-md-6">
+                            <div class="card card-grid">
+                                <div class="card-body">
+                                    <p class="list-text"><i class="fas fa-user-friends icon-list"></i>Followers:
+                                    </p>
+                                    <p class="data-static">
+                                        -
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 col-md-6">
+                            <div class="card card-grid">
+                                <div class="card-body">
+                                    <p class="list-text"><i class="fas fa-photo-video icon-list"></i>Media
+                                        Count:
+                                    </p>
+                                    <p class="data-static">
+                                        -
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 col-md-6">
+                            <div class="card card-grid">
+                                <div class="card-body">
+                                    <p class="list-text"><i class="fas fa-percentage icon-list"></i>ER Profile:
+                                    </p>
+                                    <p class="data-static">
+                                        -
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-12 col-md-6">
+                            <div class="card card-grid">
+                                <div class="card-body">
+                                    <p class="list-text"><i class="fas fa-thumbs-up icon-list"></i>Avg
+                                        Likes:
+                                    </p>
+                                    <p class="data-static">
+                                        -
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card h-100 card-chart">
+                                <div class="card-body">
+                                    <p>
+                                    <div>
+                                        <canvas id="myChart2"></canvas>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
                 </div>
 
-            </div>
+        </div>
             <!-- /#page-content-wrapper -->
     </div>
     <!-- Optional JavaScript -->

@@ -27,6 +27,9 @@ const labels = [
   "Post 10",
   "Post 11",
   "Post 12",
+  "Post 13",
+  "Post 14",
+  "Post 15"
 ];
 
 // var dataLikes = {
@@ -64,14 +67,14 @@ const data2 = {
   labels: labels,
   datasets: [
     {
-      label: "Likes",
+      label: "Views",
       lineTension: 0.5,
       pointRadius: 3,
       pointHoverRadius: 3,
       fill: true,
       backgroundColor: "rgba(61, 204, 145, 0.20)",
       borderColor: "rgba(61, 205, 144, 1)",
-      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     },
   ],
 };

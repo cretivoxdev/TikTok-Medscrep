@@ -403,3 +403,8 @@ img.img-er{
     background: rgba(255, 255, 255, 0.068);
 }
 
+table img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}

@@ -198,12 +198,16 @@ def tiktok():
     # feed = send_get_request(url, params)
     
     # print(user, " || " , retval,  " || ", retval['statusCode'])
+    try:
+        Link = retval['userInfo']['user']['bioLink']['link']
+    except:
+        Link = ""
     if retval['statusCode'] == 10000:
         out = [['maintenance','maintenance','maintenance'],['maintenance','maintenance','maintenance'],['maintenance','maintenance','maintenance']]
     else:
         Name = retval['userInfo']['user']['nickname']
         Bio = retval['userInfo']['user']['signature']
-        Link = retval['userInfo']['user']['bioLink']['link']
+        # Link = retval['userInfo']['user']['bioLink']['link']
         Profile_pict = retval['userInfo']['user']['avatarLarger']
         Total_followers = retval['userInfo']['stats']['followerCount']
         Total_post = retval['userInfo']['stats']['videoCount']
