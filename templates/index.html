@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    flask test
+    <form action="{{ url_for('tiktok')}}" method="post">
+        <div class="form-group">
+            <label for="Tiktok Username">Username TikTok</label>
+            <input name="usrname" required>
+            <button type="submit" class="btn royal btn-block">Submit</button>
+        </div>
+        
+        
+    </form>
+    {% if name %}
+        After TikTok Scrape
+        <p>Username : {{name}}</p> 
+        <p>Bio : {{bio}}</p>
+        <p>link : <a href="https://{{link}}"> link </a></p>
+        <p>pict : <img src="{{pict}}" ></p>
+        <p>total follower : {{follower}}</p>
+        <p>total post : {{post}}</p>
+        <p>evg like : {{like}}</p>
+        <p>ER_profile : {{ER_pro}}</p>
+        <p>ER_view : {{ER_view}}</p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Posts</th>
+                        <th>Caption</th>
+                        <th>Link</th>
+                        <th>Like</th>
+                        <th>Comments</th>
+                        <th>Views</th>
+                        <th>ER Post</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">1</td>
+                        <td><img width="150px" height="100%" src="{{post_1}}" alt=""></td>
+                        <td class="box">{{caption_1}}</td>
+                        <td><a href="{{link_1}}" target="_blank">Link</a></td>
+                        <td>{{like_1}}</td>
+                        <td>{{comment_1}}</td>
+                        <td>{{view_1}}</td>
+                        <td>{{erp_1}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">2</td>
+                        <td><img width="150px" height="100%" src="{{post_2}}" alt=""></td>
+                        <td class="box">{{caption_2}}</td>
+                        <td><a href="{{link_2}}" target="_blank">Link</a></td>
+                        <td>{{like_2}}</td>
+                        <td>{{comment_2}}</td>
+                        <td>{{view_2}}</td>
+                        <td>{{erp_2}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">3</td>
+                        <td><img width="150px" height="100%" src="{{post_3}}" alt=""></td>
+                        <td class="box">{{caption_3}}</td>
+                        <td><a href="{{link_3}}" target="_blank">Link</a></td>
+                        <td>{{like_3}}</td>
+                        <td>{{comment_3}}</td>
+                        <td>{{view_3}}</td>
+                        <td>{{erp_3}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">4</td>
+                        <td><img width="150px" height="100%" src="{{post_4}}" alt=""></td>
+                        <td class="box">{{caption_4}}</td>
+                        <td><a href="{{link_4}}" target="_blank">Link</a></td>
+                        <td>{{like_4}}</td>
+                        <td>{{comment_4}}</td>
+                        <td>{{view_4}}</td>
+                        <td>{{erp_4}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">5</td>
+                        <td><img width="150px" height="100%" src="{{post_5}}" alt=""></td>
+                        <td class="box">{{caption_5}}</td>
+                        <td><a href="{{link_5}}" target="_blank">Link</a></td>
+                        <td>{{like_5}}</td>
+                        <td>{{comment_5}}</td>
+                        <td>{{view_5}}</td>
+                        <td>{{erp_5}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">6</td>
+                        <td><img width="150px" height="100%" src="{{post_6}}" alt=""></td>
+                        <td class="box">{{caption_6}}</td>
+                        <td><a href="{{link_6}}" target="_blank">Link</a></td>
+                        <td>{{like_6}}</td>
+                        <td>{{comment_6}}</td>
+                        <td>{{view_6}}</td>
+                        <td>{{erp_6}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">7</td>
+                        <td><img width="150px" height="100%" src="{{post_7}}" alt=""></td>
+                        <td class="box">{{caption_7}}</td>
+                        <td><a href="{{link_7}}" target="_blank">Link</a></td>
+                        <td>{{like_7}}</td>
+                        <td>{{comment_7}}</td>
+                        <td>{{view_7}}</td>
+                        <td>{{erp_7}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">8</td>
+                        <td><img width="150px" height="100%" src="{{post_8}}" alt=""></td>
+                        <td class="box">{{caption_8}}</td>
+                        <td><a href="{{link_8}}" target="_blank">Link</a></td>
+                        <td>{{like_8}}</td>
+                        <td>{{comment_8}}</td>
+                        <td>{{view_8}}</td>
+                        <td>{{erp_8}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">9</td>
+                        <td><img width="150px" height="100%" src="{{post_9}}" alt=""></td>
+                        <td class="box">{{caption_9}}</td>
+                        <td><a href="{{link_9}}" target="_blank">Link</a></td>
+                        <td>{{like_9}}</td>
+                        <td>{{comment_9}}</td>
+                        <td>{{view_9}}</td>
+                        <td>{{erp_9}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">10</td>
+                        <td><img width="150px" height="100%" src="{{post_10}}" alt=""></td>
+                        <td class="box">{{caption_10}}</td>
+                        <td><a href="{{link_10}}" target="_blank">Link</a></td>
+                        <td>{{like_10}}</td>
+                        <td>{{comment_10}}</td>
+                        <td>{{view_10}}</td>
+                        <td>{{erp_10}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">11</td>
+                        <td><img width="150px" height="100%" src="{{post_11}}" alt=""></td>
+                        <td class="box">{{caption_11}}</td>
+                        <td><a href="{{link_11}}" target="_blank">Link</a></td>
+                        <td>{{like_11}}</td>
+                        <td>{{comment_11}}</td>
+                        <td>{{view_11}}</td>
+                        <td>{{erp_11}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">12</td>
+                        <td><img width="150px" height="100%" src="{{post_12}}" alt=""></td>
+                        <td class="box">{{caption_12}}</td>
+                        <td><a href="{{link_12}}" target="_blank">Link</a></td>
+                        <td>{{like_12}}</td>
+                        <td>{{comment_12}}</td>
+                        <td>{{view_12}}</td>
+                        <td>{{erp_12}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">13</td>
+                        <td><img width="150px" height="100%" src="{{post_13}}" alt=""></td>
+                        <td class="box">{{caption_13}}</td>
+                        <td><a href="{{link_13}}" target="_blank">Link</a></td>
+                        <td>{{like_13}}</td>
+                        <td>{{comment_13}}</td>
+                        <td>{{view_13}}</td>
+                        <td>{{erp_13}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">14</td>
+                        <td><img width="150px" height="100%" src="{{post_14}}" alt=""></td>
+                        <td class="box">{{caption_14}}</td>
+                        <td><a href="{{link_14}}" target="_blank">Link</a></td>
+                        <td>{{like_14}}</td>
+                        <td>{{comment_14}}</td>
+                        <td>{{view_14}}</td>
+                        <td>{{erp_14}}</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">15</td>
+                        <td><img width="150px" height="100%" src="{{post_15}}" alt=""></td>
+                        <td class="box">{{caption_15}}</td>
+                        <td><a href="{{link_15}}" target="_blank">Link</a></td>
+                        <td>{{like_15}}</td>
+                        <td>{{comment_15}}</td>
+                        <td>{{view_15}}</td>
+                        <td>{{erp_15}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        Before TikTok Scrape
+    {% endif %}
+</body>
+</html>
