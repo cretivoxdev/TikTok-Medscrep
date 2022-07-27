@@ -1,0 +1,405 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: rgb(255, 255, 255);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    padding: 15px;
+    background: rgb(238, 238, 238);
+    overflow-x: auto;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li:hover {
+    background: rgba(65, 105, 225, 0.171);
+}
+
+.sidebar-nav li.active {
+    background: royalblue;
+    color: white;
+}
+
+.sidebar-nav li.active a {
+    color: white;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li i {
+    margin-right: 20px;
+}
+
+.sidebar-brand img {
+    width: 130px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* .sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+} */
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav>.sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav>.sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(max-width: 768px) {
+    #page-content-wrapper {
+        padding: 0px;
+    }
+
+    .card-grid .card-body {
+        padding: 0px;
+    }
+
+    .card-profile .card-body {
+        padding: 0;
+    }
+
+    .card-chart .card-body {
+        padding: 0;
+    }
+}
+
+@media(max-width: 991px) {
+    .profile-card {
+        text-align: center;
+    }
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+.card {
+    border-radius: 20px;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+    margin: 10px 0 10px;
+}
+
+/* Opening */
+
+
+#opening img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+}
+
+.royal {
+    background: royalblue;
+    color: white;
+}
+
+.royal:hover {
+    color: white;
+}
+
+img.profile-picture {
+    border-radius: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+p.data-static {
+    font-size: 1.5em;
+    color: royalblue;
+}
+
+canvas {
+    max-height: 300px;
+}
+
+.card-body {
+    margin: 0;
+}
+
+.icon-list {
+    /* color: royalblue; */
+    margin-right: 10px;
+}
+
+.margin-card {
+    margin: 20px 0 20px;
+}
+
+.card-heading {
+    background: none;
+    padding: 0;
+}
+
+.card-heading .card-body {
+    padding: 0;
+}
+
+.loading {
+    background: rgba(0, 0, 0, 0.568);
+    z-index: 19999;
+    position: fixed;
+    color: black;
+    display: none;
+}
+
+.card-loading p {
+    margin: 0;
+}
+
+.box {
+    inline-size: 600px;
+}
+
+.feedback {
+    background-color: #31B0D5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #46b8da;
+}
+
+#mybutton {
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+
+p.biography {
+    max-width: 300ch;
+}
+
+#showValue {
+    padding: 5px 10px 5px;
+    color: royalblue;
+}
+
+.table-row {
+    cursor: pointer;
+}
+
+.download-container {
+    background: rgb(238, 238, 238);
+}
+
+.downloader {
+    padding: 15px;
+    background: rgba(65, 105, 225, 0.164);
+    border-radius: 100%;
+}
+
+.list-group-item {
+    background: white;
+    padding: 13px 15px;
+}
+
+.text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.badge {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+#output-grade {
+    /* The command I know best. */
+    text-transform: uppercase;
+    color: #fdf6f0;
+    font-size: 8em;
+    font-weight: bold;
+    color: white;
+    height: 100%;
+    line-height: 150px;
+}
+
+.frame-count {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+}
+
+.card .card-rank {
+    background-image: linear-gradient(to right top, #6687eb, #3b9af2, #03abf0, #10b9ea, #41c5e1);
+    border-radius: 20px;
+}
+
+.card-body.card-rank{
+    display: flex;
+    align-items: center;
+}
+
+.rating_circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 70px;
+    border: 1px none;
+    font-size: 35px;
+  }
+  .rating_text{
+      margin-top: 38px;
+  }
+  .stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.stars-outer::before {
+  content: "\f006 \f006 \f006 \f006 \f006";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+content: "\f005 \f005 \f005 \f005 \f005";
+color: #000000;
+}
+.dark {
+    background-color: #000000;
+}
+
+.info{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+}
+
+.info i{
+    color: rgb(255, 255, 255);
+}
+
+.info i:hover{
+    color: rgb(243, 185, 78);
+}
+
+img.img-er{
+    width: 100%;
+}
+
+#tierInfluencer{
+    color: white;
+    background: rgba(255, 255, 255, 0.068);
+}
+

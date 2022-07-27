@@ -112,6 +112,14 @@ default_params = {
 def index():
     return render_template('index.html')
 
+@app.route('/index.html')
+def home():
+    return render_template('index.html')
+
+@app.route('/login.html')
+def login():
+    return render_template('login.html')
+
 @app.route('/tiktok' , methods = ["POST","GET"])
 def tiktok():
     usrname = str(request.form.get("usrname"))
