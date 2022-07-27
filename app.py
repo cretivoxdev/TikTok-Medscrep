@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, flash, redirect, request, render_template
 import pandas as pd
 from regex import L
 from scipy.__config__ import show
@@ -22,6 +22,7 @@ from TiktokCvox import *
 
 
 app=Flask(__name__)
+app.secret_key = "Dhjkasu2381hdfjkKUDr4dsajklDHUJUI489190"
 
 #Tiktok library
 Api = Tiktok()
@@ -139,6 +140,12 @@ def tiktok():
     while True:
         if first == True:
             data = Api.getUserFeed(first=first)
+            try:
+                print(data['ItemModule'])
+            except:
+                flash("account not found!!")
+                print("user not found")
+                return redirect('/index.html')
             for x in data['ItemModule']:
                 video_id = data['ItemModule'][x]['id']
                 vid_id.append(video_id)
@@ -213,6 +220,7 @@ def tiktok():
         Total_post = retval['userInfo']['stats']['videoCount']
         Total_like = retval['userInfo']['stats']['heartCount']
         Evg_like = int(Total_like) / int(Total_post)
+        
         showdata = [Name,Bio,Link,Profile_pict,Total_followers,Total_post, Evg_like]
     
     #get more data tiktok
@@ -228,12 +236,13 @@ def tiktok():
             "lang": "",
             "verifyFp": "",
             }
-    Like, Comment, Share, Views, caption , linkpost , erp, cover= [], [], [], [], [], [], [], []
+    i = 1
+    Like, Comment, Share, Views, caption , linkpost , erp, cover,  datajson, datajson2= [],[],[], [], [], [], [], [], [], []
     for id in range(29,14,-1):
         url = 'https://www.tiktok.com/node/share/video/@tiktok/' + vid_id[id]
-        print(url)
+        # print(url)
         data = requests.get(url, params=param, headers=headers)
-        print(data)
+        # print(data)
         data = data.json() #error "json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
         
         filename = 'user.json'
@@ -255,12 +264,33 @@ def tiktok():
         erp.append(("%.2f" % ERP))
         cover.append(dataTik['itemInfo']['itemStruct']['video']['dynamicCover'])
         
+        #get json data
+        item =  {"id" : i}
+        item["like"] =  dataTik['itemInfo']['itemStruct']['stats']['diggCount']
+        item["views"] = dataTik['itemInfo']['itemStruct']['stats']['playCount']   
+        item["link"] = "https://www.tiktok.com/@cretivox/video/" + vid_id[id]
+        datajson.append(item)
+        i += 1
            
         # print(Like)
-    
+    print(len(Like))
+    jsonString = json.dumps(datajson)
+    jsonFile = open("./static/assets/chart.json", "w")
+    jsonFile.write(jsonString)
+    jsonFile.close()
     ER  = (sum(Like) + sum(Comment) + sum(Share))
     Profile_ER = (ER / Total_followers)*100
     Views_ER = (ER / sum(Views))*100
+    #get grade data
+    grade = {"name" : usrname}
+    grade["followers"] = Total_followers
+    grade["ER"] = "%.2f" % Profile_ER
+    datajson2.append(grade)
+    jsonString_grade = json.dumps(datajson2)
+    jsonFile_grade = open("./static/assets/grade.json", "w")
+    jsonFile_grade.write(jsonString_grade)
+    jsonFile_grade.close()
+    
     showdata.extend((Profile_ER,Views_ER))
     print(showdata)
     
@@ -284,6 +314,7 @@ def tiktok():
                            comment_1 = (f"{Comment[0]:,}"),
                            view_1 = (f"{Views[0]:,}"),
                            erp_1 = ("%.2f" % float(erp[0])) + "%",
+                           share_1 = (f"{Share[0]:,}"),
                            
                            #2
                            post_2 = cover[1],
@@ -293,6 +324,7 @@ def tiktok():
                            comment_2 = (f"{Comment[1]:,}"),
                            view_2 = (f"{Views[1]:,}"),
                            erp_2 = ("%.2f" % float(erp[1])) + "%",
+                           share_2 = (f"{Share[1]:,}"),
                            
                            #3
                            post_3 = cover[2],
@@ -302,6 +334,7 @@ def tiktok():
                            comment_3 = (f"{Comment[2]:,}"),
                            view_3 = (f"{Views[2]:,}"),
                            erp_3 = ("%.2f" % float(erp[2])) + "%",
+                           share_3 = (f"{Share[2]:,}"),
                            
                            #4
                            post_4 = cover[3],
@@ -311,6 +344,7 @@ def tiktok():
                            comment_4 = (f"{Comment[3]:,}"),
                            view_4 = (f"{Views[3]:,}"),
                            erp_4 = ("%.2f" % float(erp[3])) + "%",
+                           share_4 = (f"{Share[3]:,}"),
                            
                            #5
                            post_5 = cover[4],
@@ -320,6 +354,7 @@ def tiktok():
                            comment_5 = (f"{Comment[4]:,}"),
                            view_5 = (f"{Views[4]:,}"),
                            erp_5 = ("%.2f" % float(erp[4])) + "%",
+                           share_5 = (f"{Share[4]:,}"),
                            
                            #6
                            post_6 = cover[5],
@@ -329,6 +364,7 @@ def tiktok():
                            comment_6 = (f"{Comment[5]:,}"),
                            view_6 = (f"{Views[5]:,}"),
                            erp_6 = ("%.2f" % float(erp[5])) + "%",
+                           share_6 = (f"{Share[5]:,}"),
                            
                            #7
                            post_7 = cover[6],
@@ -338,6 +374,7 @@ def tiktok():
                            comment_7 = (f"{Comment[6]:,}"),
                            view_7 = (f"{Views[6]:,}"),
                            erp_7 = ("%.2f" % float(erp[6])) + "%",
+                           share_7 = (f"{Share[6]:,}"),
                            
                            #8
                            post_8 = cover[7],
@@ -347,6 +384,7 @@ def tiktok():
                            comment_8 = (f"{Comment[7]:,}"),
                            view_8 = (f"{Views[7]:,}"),
                            erp_8 = ("%.2f" % float(erp[7])) + "%",
+                           share_8 = (f"{Share[7]:,}"),
                            
                            #9
                            post_9 = cover[8],
@@ -356,6 +394,7 @@ def tiktok():
                            comment_9 = (f"{Comment[8]:,}"),
                            view_9 = (f"{Views[8]:,}"),
                            erp_9 = ("%.2f" % float(erp[8])) + "%",
+                           share_9 = (f"{Share[8]:,}"),
                            
                            #10
                            post_10 = cover[9],
@@ -365,6 +404,7 @@ def tiktok():
                            comment_10 = (f"{Comment[9]:,}"),
                            view_10 = (f"{Views[9]:,}"),
                            erp_10 = ("%.2f" % float(erp[9])) + "%",
+                           share_10 = (f"{Share[9]:,}"),
                            
                            #11
                            post_11 = cover[10],
@@ -374,6 +414,7 @@ def tiktok():
                            comment_11 = (f"{Comment[10]:,}"),
                            view_11 = (f"{Views[10]:,}"),
                            erp_11 = ("%.2f" % float(erp[10])) + "%",
+                           share_11 = (f"{Share[10]:,}"),
                            
                            #12
                            post_12 = cover[11],
@@ -383,6 +424,7 @@ def tiktok():
                            comment_12 = (f"{Comment[11]:,}"),
                            view_12 = (f"{Views[11]:,}"),
                            erp_12 = ("%.2f" % float(erp[11])) + "%",
+                           share_12 = (f"{Share[11]:,}"),
                            
                            #13
                            post_13 = cover[12],
@@ -392,6 +434,7 @@ def tiktok():
                            comment_13 = (f"{Comment[12]:,}"),
                            view_13 = (f"{Views[12]:,}"),
                            erp_13 = ("%.2f" % float(erp[12])) + "%",
+                           share_13 = (f"{Share[12]:,}"),
                            
                            #14
                            post_14 = cover[13],
@@ -401,6 +444,7 @@ def tiktok():
                            comment_14 = (f"{Comment[13]:,}"),
                            view_14 = (f"{Views[13]:,}"),
                            erp_14 = ("%.2f" % float(erp[13])) + "%",
+                           share_14 = (f"{Share[13]:,}"),
                            
                            #15
                            post_15 = cover[14],
@@ -409,7 +453,8 @@ def tiktok():
                            like_15 = (f"{Like[14]:,}"),
                            comment_15 = (f"{Comment[14]:,}"),
                            view_15 = (f"{Views[14]:,}"),
-                           erp_15 = ("%.2f" % float(erp[14])) + "%"
+                           erp_15 = ("%.2f" % float(erp[14])) + "%",
+                           share_15 = (f"{Share[14]:,}")
                            
                         )
 
