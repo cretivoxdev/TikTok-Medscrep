@@ -48,18 +48,38 @@ const labels = [
 //   borderColor: 'blue'
 // }
 
-const data = {
+const dataTikTok = {
   labels: labels,
   datasets: [
     {
-      label: "Likes",
+      label: "Views",
       lineTension: 0.5,
       pointRadius: 3,
       pointHoverRadius: 3,
       fill: true,
       backgroundColor: "rgba(61, 204, 145, 0.20)",
       borderColor: "rgba(61, 205, 144, 1)",
-      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    },
+    {
+      label: "Likes",
+      lineTension: 0.5,
+      pointRadius: 3,
+      pointHoverRadius: 3,
+      fill: true,
+      backgroundColor: "rgba(61, 109, 204, 0.20)",
+      borderColor: "rgba(61, 109, 204, 1)",
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    },
+    {
+      label: "Shares",
+      lineTension: 0.5,
+      pointRadius: 3,
+      pointHoverRadius: 3,
+      fill: true,
+      backgroundColor: "rgba(204, 166, 61, 0.20)",
+      borderColor: "rgba(204, 166, 61, 1)",
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     },
   ],
 };
@@ -79,9 +99,9 @@ const data2 = {
   ],
 };
 
-const config = {
+const configTikTok = {
   type: "line",
-  data: data,
+  data: dataTikTok,
   options: {},
 };
 
@@ -91,12 +111,12 @@ const configNew ={
   options: {},
 }
 
-const myChart = new Chart(document.getElementById("myChart"), config);
+const chartTikTok = new Chart(document.getElementById("chart-tiktok"), configTikTok);
 const myChart2 = new Chart(document.getElementById("myChart2"), configNew)
 
 $(document).ready(function () {
   async function fetchData() {
-    const url = "../static/assets/data.json";
+    const url = "../static/assets/chart.json";
     const response = await fetch(url);
     const datapoints = await response.json();
     // console.log(datapoints)
@@ -107,18 +127,25 @@ $(document).ready(function () {
     const post = datapoints.map(function (index) {
       return "Post " + index.id;
     });
-
-    const likes = datapoints.map(function (index) {
+    const views = datapoints.map(function (index) {
+      return index.views;
+    });
+    const likes = datapoints.map(function (index){
       return index.like;
-    });
+    })
+    const shares = datapoints.map(function (index){
+      return index.share;
+    })
 
-    const comments = datapoints.map(function (index) {
-      return index.comment;
-    });
+    // const likes = datapoints.map(function (index) {
+    //   return index.like;
+    // });
 
-    myChart.config.data.labels = post;
-    myChart.config.data.datasets[0].data = likes;
-    myChart.update();
+    chartTikTok.config.data.labels = post;
+    chartTikTok.config.data.datasets[0].data = views;
+    chartTikTok.config.data.datasets[1].data = likes;
+    chartTikTok.config.data.datasets[2].data = shares;
+    chartTikTok.update();
   });
 })
 

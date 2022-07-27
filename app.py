@@ -143,7 +143,7 @@ def tiktok():
             try:
                 print(data['ItemModule'])
             except:
-                flash("account not found!!")
+                flash("this account not found, please check username is correct, or try other username.")
                 print("user not found")
                 return redirect('/index.html')
             for x in data['ItemModule']:
@@ -269,6 +269,7 @@ def tiktok():
         item["like"] =  dataTik['itemInfo']['itemStruct']['stats']['diggCount']
         item["views"] = dataTik['itemInfo']['itemStruct']['stats']['playCount']   
         item["link"] = "https://www.tiktok.com/@cretivox/video/" + vid_id[id]
+        item["share"] = dataTik['itemInfo']['itemStruct']['stats']['shareCount']
         datajson.append(item)
         i += 1
            
